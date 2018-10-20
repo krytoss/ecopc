@@ -17,7 +17,7 @@
 			
 				<a href="#"><i class="fab fa-facebook-f semi-bold align-center" aria-hidden="true"></i></a>
 				<a href="#"><i class="fab fa-instagram semi-bold align-center" aria-hidden="true"></i></a>
-				<a href="{{ URL::to('cart') }}" class="cart">Košík <i class="fas fa-shopping-cart"></i><span class="badge">{{ $cart_qty }}</span></a>
+				<!-- <a href="{{ URL::to('cart') }}" class="cart">Košík <i class="fas fa-shopping-cart"></i><span class="badge">{{ $cart_qty }}</span></a> -->
 
 			</div>
 
@@ -46,7 +46,7 @@
 					</li>
 
 					<li>
-						<a href="{{ URL::to('products') }}" class="{{{ Request::is('offer') ? 'active' : '' }}}{{{ Request::is('category/*') ? 'active' : '' }}}">Ponuka</a>
+						<a href="{{ URL::to('products') }}" class="{{{ Request::is('products') ? 'active' : '' }}}{{{ Request::is('category/*') ? 'active' : '' }}}">Ponuka</a>
 					</li>
 
 					<li>

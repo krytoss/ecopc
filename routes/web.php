@@ -16,8 +16,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@send');
+
 Route::get('/products', 'HomeController@showProducts');
 Route::get('/category/{cat}', ['uses' => 'HomeController@showProducts']);
+Route::get('/products/{slug}', 'HomeController@showProduct');
 
 Route::post('/addcart', 'CartController@addToCart');
 Route::get('/cart','CartController@index');
@@ -36,4 +38,21 @@ Route::group(['middleware' => ['web']], function() {
 
 Route::group(['prefix' => 'admin',  'middleware' => 'admin'],function () {
     Route::get('/', 'AdminController@index');
+    Route::group(['prefix' => 'products'], function() {
+	    Route::get('/', 'ProductsController@index');
+	    Route::get('/new', 'ProductsController@new');
+        Route::post('/new', 'ProductsController@store');
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
